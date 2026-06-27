@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PracticeCard from "../../components/PracticeCard/PracticeCard";
 import heroImage from "../../assets/images/hero/hero_image.png";
+import forearmStandCenter from "../../assets/images/practice_paths/forearm_stand_centre.png";
+import headStandCenter from "../../assets/images/practice_paths/headstand_center.png";
+import handStandCenter from "../../assets/images/practice_paths/handstand_center.png";
+import press_to_handstandCenter from "../../assets/images/practice_paths/press_to_handstand_center.png";
 
 function PracticePaths() {
 
@@ -14,30 +18,34 @@ const [selectedLevel, setSelectedLevel] = useState("All");
     const practicePaths = [
         {
             title: "Headstand Foundations",
+            slug: "headstand_foundations",
             level: "Beginner",
             lessons: 6,
-            image: heroImage,
+            image: headStandCenter,
         },
 
         {
             title: "Handstand Journey",
+            slug: "handstand_journey",
             level: "Intermediate",
             lessons: 7,
-            image: heroImage,
+            image: handStandCenter,
         },
 
         {
             title: "Press to Handstand",
+            slug: "press_to_handstand",
             level: "Advanced",
             lessons: 8,
-            image: heroImage,
+            image: press_to_handstandCenter,
         },
 
         {
             title: "Forearm Stand",
+            slug: "forearm_stand",
             level: "Intermediate",
             lessons: 5,
-            image: heroImage,
+            image: forearmStandCenter,
         },
     ];
 
@@ -99,21 +107,18 @@ const [selectedLevel, setSelectedLevel] = useState("All");
           </button>
             ))
           }
-
-         
-
           
         </div>
 
         {/* Cards */}
-
+       
           <div className="grid grid-cols-2 gap-8 mt-12">
 
             {
               filteredPaths.map((path) => (
 
               <PracticeCard
-                  key={path.title}
+                  key={path.slug}
                   image={path.image}
                   title={path.title}
                   level={path.level}

@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
+
 function PracticeCard({
   image,
   title,
+  slug,
   level,
   lessons
 }) {
   return (
+    <Link to={`/practice/${slug}`}>
     <div className="rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-[#aea584] transition-all duration-300 hover:-translate-y-2
     hover:shadow-2xl hover:border-[#aea584] transition-all duration-300 relative">
 
@@ -18,11 +22,11 @@ function PracticeCard({
 
       <div className="p-6">
 
-        <h3 className="text-xl font-serif">
+        <h3 className="text-xl font-serif font-medium">
           {title}
         </h3>
 
-        <div className="flex gap-4 mt-3 text-gray-400 text-sm uppercase tracking-wider text-xs text-gray-400">
+        <div className="flex gap-4 mt-3 text-gray-400 uppercase tracking-widest text-xs text-gray-400">
           <span>{level}</span>
           <span>•</span>
           <span>{lessons} Lessons</span>
@@ -31,6 +35,7 @@ function PracticeCard({
       </div>
 
     </div>
+    </Link>
   );
 }
 
