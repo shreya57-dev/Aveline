@@ -20,6 +20,9 @@ function App(){
       
         <Route path="/practice-paths"
           element={<PracticePaths />} />
+
+        <Route path="/practice/:slug"
+          element={<PracticeDetails />} />
       
         <Route path="/practice/:id"
           element={<PracticeDetails />} />

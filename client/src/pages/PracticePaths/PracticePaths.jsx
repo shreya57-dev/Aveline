@@ -56,6 +56,8 @@ const [selectedLevel, setSelectedLevel] = useState("All");
               (path) => path.level === selectedLevel
           );
 
+         
+
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
 
@@ -121,6 +123,7 @@ const [selectedLevel, setSelectedLevel] = useState("All");
                   key={path.slug}
                   image={path.image}
                   title={path.title}
+                  slug={path.slug}
                   level={path.level}
                   lessons={path.lessons}
               />
